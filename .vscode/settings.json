@@ -1,0 +1,11 @@
+{
+    "tailwindCSS.includeLanguages": {
+        "rust": "html"
+    },
+    "tailwindCSS.experimental.classRegex": [
+        "class\\s*:\\s*\"([^\"]*)"
+    ],
+    "cSpell.words": [
+        "onclick"
+    ]
+}
