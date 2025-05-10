@@ -12,6 +12,12 @@
 .grid {
   display: grid;
 }
+.hidden {
+  display: none;
+}
+.table {
+  display: table;
+}
 .h-full {
   height: 100%;
 }
@@ -23,6 +29,9 @@
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.resize {
+  resize: both;
 }
 .grid-cols-\[repeat\(3\,60px\)\] {
   grid-template-columns: repeat(3,60px);

@@ -1,6 +1,7 @@
 [application]
-
+out_dir = "docs"
 [web.app]
+base_path = "tic-tac-toe-dioxus"
 
 # HTML title tag content
 title = "tic-tac-toe-dioxus"
