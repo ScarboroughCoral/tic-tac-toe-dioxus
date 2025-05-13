@@ -97,9 +97,7 @@ pub fn Game() -> Element {
         {
             return;
         }
-        game_board.get_mut(index).map(|mut x| {
-            *x = BoardItem::from_player(*next_player.read());
-        });
+        game_board.write()[index] = BoardItem::from_player(*next_player.read());
         let winner = BoardItem::check_who_win(&*game_board.read());
         if winner.is_some() {
             game_state.set(GamePlayState::Over);
@@ -129,7 +127,9 @@ pub fn Game() -> Element {
         let window = window().unwrap();
         let game_winner = *game_winner.read();
         if let Some(winner) = game_winner {
-            window.alert_with_message(format!("{winner} wins!").as_str()).unwrap();
+            window
+                .alert_with_message(format!("{winner} wins!").as_str())
+                .unwrap();
             reset_state();
         } else if *game_state.read() == GamePlayState::Over {
             window.alert_with_message("Game over!").unwrap();
